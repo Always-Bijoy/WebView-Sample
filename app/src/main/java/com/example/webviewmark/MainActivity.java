@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button b1, b2, b3;
+    Button b1, b2, b3,b4;
     EditText editText;
 //    WebView web;
 
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         b1= findViewById(R.id.button);
         b2 = findViewById(R.id.button2);
+        b4 = findViewById(R.id.lstViewId);
 
         b3=findViewById(R.id.buttonGo);
         editText=findViewById(R.id.ediId);
@@ -46,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonGo:
                 intent.putExtra("url", editText.getText().toString());
                 startActivity(intent);
+                break;
+            case R.id.lstViewId:
+                Intent intent1 = new Intent(getApplicationContext(), listViewActivity.class);
+                startActivity(intent1);
                 break;
 
                 default:
